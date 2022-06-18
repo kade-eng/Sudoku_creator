@@ -5,34 +5,176 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
+
+    <GridLayout
+        android:id="@+id/sudokuGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- first row -->
+        <EditText
+            android:id="@+id/A1"
+            android:inputType="number"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="0"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/A2"
+            android:inputType="number"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="1"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/A3"
+            android:inputType="number"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="2"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <!-- second row -->
+        <EditText
+            android:id="@+id/B1"
+            android:inputType="number"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="0"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/B2"
+            android:inputType="number"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="1"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/B3"
+            android:inputType="number"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="2"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <!-- third row -->
+        <EditText
+            android:id="@+id/C1"
+            android:inputType="number"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="0"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/C2"
+            android:inputType="number"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="1"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/C3"
+            android:inputType="number"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center"
+            android:text="2"
+            android:maxLength="1"
+            android:textSize="14sp" />
+
+    </GridLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="ButtonStyle">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/savedButton"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:onClick="savedPuzzles"
+            android:text="PUZZLES"
+            android:textSize="18dp" />
 
-            <Button
-                android:id="@+id/logHeaderButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:onClick="showLogScalingHeader"
-                android:text="HELLO"
-                android:textSize="22dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:onClick="savePuzzle"
+            android:text="SAVE"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/solveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:onClick="solvePuzzle"
+            android:text="SOLVE"
+            android:textSize="18dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
