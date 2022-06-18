@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Sudoku_creator"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.SavedActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sudoku_creator.NoActionBar">
+        </activity>
+        <activity
             android:name=".Activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"

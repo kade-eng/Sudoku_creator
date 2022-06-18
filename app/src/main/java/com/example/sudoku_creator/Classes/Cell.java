@@ -7,6 +7,8 @@ public class Cell {
     private int row;
     private int col;
 
+    private Integer boardID;
+
     public Cell(){
     }
 
@@ -46,6 +48,14 @@ public class Cell {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    public Integer getBoardID() {
+        return boardID;
+    }
+
+    public void setBoardID(Integer boardID) {
+        this.boardID = boardID;
     }
 
 }
