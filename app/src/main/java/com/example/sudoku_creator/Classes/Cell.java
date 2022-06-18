@@ -1,6 +1,8 @@
 package com.example.sudoku_creator.Classes;
 
 public class Cell {
+    private int uid;
+
     private Integer value;
     private int row;
     private int col;
@@ -37,4 +39,13 @@ public class Cell {
     public void setCol(int col) {
         this.col = col;
     }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
 }
